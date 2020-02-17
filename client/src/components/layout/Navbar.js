@@ -35,7 +35,7 @@ function Navbar({ title, icon }) {
   return (
     <div className="navbar bg-primary">
       <h1>
-        <i className={icon}></i> {title}
+        <a href='/'><i className={icon}></i> {title}</a>
       </h1>
       <ul>
         {isAuthenticated ? authLinks : guestLinks}
