@@ -5,10 +5,10 @@ import ContactContext from "../../context/contact/contactContext";
 const ContactItem = ({ contact }) => {
   const contactContext = useContext(ContactContext);
   const { deleteContact, clearCurrent, setCurrent } = contactContext;
-  const { id, name, type, phone, email } = contact;
+  const { _id, name, type, phone, email } = contact;
 
   const onDelete = () => {
-    deleteContact(id);
+    deleteContact(_id);
     clearCurrent();
   };
   return (
@@ -20,7 +20,7 @@ const ContactItem = ({ contact }) => {
           className={
             "badge " + (type === "personal" ? "badge-primary" : "badge-success")
           }>
-          {type.charAt(0).toUpperCase() + type.slice(1)}
+            {type.charAt(0).toUpperCase() + type.slice(1)}
         </span>
       </h3>
       <ul className="list">

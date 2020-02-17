@@ -56,9 +56,7 @@ router.post('/', [auth, [
 
         const contact = await newContact.save()
 
-        res.json({
-            contact
-        })
+        res.json(contact)
 
     } catch (error) {
         console.error(error.message)
